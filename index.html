@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" type='module' defer></script>
+    <title>Cadastro</title>
+
+  </head>
+  <body>
+    
+      <div class="input-container">
+        <input
+          type="number"
+          id="cep"
+          class="text-input"
+          autocomplete="off"
+          placeholder="Rua ou Cidade"
+          required
+        />
+        <label class="label" for="cep"  for="username" required>CEP</label>
+        <button onclick="cEmder()" >consultar</button>
+        <div id="resultado" ></div>
+      </div>
+   
+
+    <script> 
+    function cEmder() {
+      let cep = document.querySelector('#cep').value;
+    
+      if (cep.length !== 8) {
+        alert('CEP INVALIDO!');
+        return;
+      }
+      let url = `https://viacep.com.br/ws/${cep}/json/`;
+      
+      fetch(url).then(function(response)
+      {
+        response.json().then(function(data)
+        {
+          console.log(data)
+          mReslt(data);
+        })
+      });
+        }
+function mReslt(dados){
+  let resultado = document.querySelector('#resultado');
+  if (dados.erro){
+    resultado.innerHTML = "Não foi possível localizar endereçao!"
+  }else{
+  resultado.innerHTML = `<p>Cidade: ${dados.localidade}</p>
+                        <p>Rua: ${dados.logradouro}</p>
+                        <p>Bairro: ${dados.bairro}</p>
+                        <p>Estado: ${dados.uf}</p>`
+                      }
+                      }
+</script>
+</body>
+</html>
