@@ -31,7 +31,8 @@ document.querySelectorAll(".text-input").forEach((element) => {
       $checkbox.addEventListener('change', function(){
         $html.classList.toggle('dark-mode')
       })
-      
+      $('.telefone').mask('(00) 0 0000-0000');
+<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>    
 
 
 

@@ -13,12 +13,12 @@
   </head>
   
   <body>
+    <input type="text" name="telefone" class="telefone form-control" placeholder="(17) 9 9173-3578" />
     <div class="container">
       <div class="btn"></div>
 
     </div>
-    <label for="switch"><input type="checkbox" id="switch">Dark mode</label>
-    
+   
       <div class="input-container">
         <input
           type="number"
@@ -32,7 +32,9 @@
         <div id="resultado" ></div>
       </div>
    
-
+      <div class="wrapper">
+        <label for="switch"><input type="checkbox" id="switch">Dark mode</label>
+      </div>
     <script> 
     function cEmder() {
       let cep = document.querySelector('#cep').value;

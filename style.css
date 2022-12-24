@@ -23,11 +23,13 @@ body {
   }
   
   .input-container {
+    
     width: 280px;
     position: relative;
   }
   
   .label {
+    
     position: absolute;
     left: 10px;
     top: 14px;
@@ -118,4 +120,15 @@ body.dark-mode {
   color: rgb(85, 85, 85);
 }
 
-  
+
+    .wrapper {
+        position: absolute;
+        width: 100%;
+   
+        display: block;
+        width: 50%;
+        margin: 30px auto;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
