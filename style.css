@@ -1,10 +1,25 @@
+
+
+:root {
+  --body-bg: #2d2664;
+  
+}
+
+
+.dark-mode:root {
+  --body-bg: #212529;
+}
 body {
+  
+    background-color: var(--body-bg);
+   
+
     display: grid;
     place-items: center;
     height: 100vh;
     font-family: "Poppins", Arial, Helvetica, sans-serif;
-    background: #191724;
-    color: #fff;
+    
+   
   }
   
   .input-container {
@@ -86,4 +101,21 @@ body {
     font-size: 16px;
     margin-bottom: 7px;
   }
+
+body.dark-mode {
+  background-color: #576069;
+  color: #899095;
+  
+}
+.dark-mode .text-input {
+ 
+  border: 2px solid #576069;
+  background: #222527;
+  border-radius: 5px;
+  font-size: 18px;
+  outline: none;
+  transition: all 0.3s;
+  color: rgb(85, 85, 85);
+}
+
   
